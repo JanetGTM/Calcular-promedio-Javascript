@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles-prom.css ">
+    <script src="https://kit.fontawesome.com/af0bf7190a.js" crossorigin="anonymous"></script>
     <title>Calcular promedio | Javascript </title>
 </head>
 <body>
     <header>
-        <h1>CALCULAR PROMEDIOS</h1>
-        <p>Tercer taller de Javascript by Platzi</p>
+        <p>Tercer taller de Javascript <span class="title-span">by Platzi</span></p>
     </header>
     <main>
-        <div class="sub-title">
-            <h2>Introduce los dígitos que ocupas promediar:</h2>
-            <p>Presiona enter para introducir el siguiente número</p>
+        <div class="title">
+            <h1>CALCULAR PROMEDIOS</h1>
+           
         </div>
         <section class="digitos">
-            <input type="number" id="cajaItem">
-            <input type="button" id="botonCalcularPromedio" value="Calcular promedio">
-            <div class="msg">
-                <p id="msg"></p>
+            <div class="sub-title">
+                <h2>Introduce los dígitos a promediar</h2>
+                <p class="cajaItem">Presiona <span class="sub-title-span">enter</span> después de cada número <i class="fa-solid fa-arrow-turn-down"></i></p>
             </div>
+            <input type="number" id="cajaItem">
+            <div class="numerosIntroducidos">
+                <p>Números digitados: </p><p id="numerosDigitados" class="array"></p>
+            </div>
+            <input type="button" id="botonCalcularPromedio" value="Calcular promedio">
         </section>
-
+        <div class="msg-container">
+            <div class="msg-container-prom">
+                <div class="resultado-container">
+                    <p>Promedio: </p><span id="resultado" class="resultado"></span>
+                </div>
+                <p id="msg" class="msg"></p>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div>
+            <p>© 2022 | Janet Torres.  Todos los derechos reservados. Tercer taller del curso Práctico de JavaScript. By Platzi <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </footer>
     <script src="./promedio.js"></script>
 </body>
 </html>

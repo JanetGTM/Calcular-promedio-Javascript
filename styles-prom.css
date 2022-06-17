@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:rgba(253,29,29,1);
+    --secundary-color:#e74645 ;
+    --txt-color: #9c9c9c;
+    --background: rgb(33, 33, 33);
+    --padding-xs: 5px;
+    --padding-m: 15px;
+    --padding-g: 40px;
+    --fontfamily:'Poppins', sans-serif;
+}
+body{
+    display: grid;
+    place-content: center;
+    background-color: var(--background);
+    grid-template-rows: 80px 1fr 60px;
+    min-height: 100vh;
+}
+header p{
+    color: var(--txt-color);    
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: -.02rem;
+    text-align: center;
+    font-family: var(--fontfamily);
+    margin-top: var(--padding-g);
+    font-size: 1.5rem;
+}
+ header span{
+   letter-spacing: -0.09rem;
+   font-size: 2.2;
+} 
+main{
+    width: 400px;
+    margin: auto;
+    border-radius: var(--padding-m);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 120px 320px 120px;
+    font-family: var(--fontfamily);
+    box-shadow: 0px 5px 35px 15px rgba(0, 0, 0, 0.678);
+    background-color: rgba(19, 18, 18, 0.473);
+    font-size: 1.1rem;
+    color: var(--txt-color);
+    /* padding-bottom: var(--padding-m); */
+}
+.title{
+    width: 100%;
+    background: rgb(235, 11, 11);
+    color: #fff;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    padding: var(--padding-m); 
+    
+}
+.title h1{
+    font-weight: 600;
+    letter-spacing: -0.09rem;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+.title-span{
+    font-weight: 600;
+}
+.sub-title{
+    color: var(--txt-color);
+    display: grid; 
+    place-content: center;
+    text-align: center;
+    width: 80%;
+    margin-bottom: var(--padding-m);
+}
+.sub-title h2{
+    font-size: 1.2rem; 
+    font-weight: 200; 
+    line-height: 1.5rem;
+}
+
+.sub-title .sub-title-span{
+    font-weight: 600;
+}
+.digitos{
+    padding-top: var(--padding-g);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.digitos .cajaItem{
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--txt-color);
+}
+.digitos input{
+    width: 100px;
+    margin:0 auto;
+    padding: var(--padding-xs);
+    color: var(--secundary-color);
+    font-size: 1.5rem;
+    font-family: var(--fontfamily);
+    font-weight: 600;
+    border-radius: var(--padding-xs);
+    border: 0;
+    text-align: center;
+}
+.numerosIntroducidos{
+    margin: var(--padding-m) 0;
+    text-align: center;
+}
+main .digitos div .array{
+    height: 30px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2rem;
+    width: 85%;
+    margin: auto;
+}
+main .digitos input[type="button"]{
+    background: linear-gradient(145deg, rgb(153, 5, 3) 0%, rgba(253,29,29,1) 54%, rgb(211, 79, 2) 100%);
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: var(--padding-xs);
+    padding: var(--padding-m);
+    width: 80%;
+    font-weight: 600;
+}
+main .digitos input[type="button"]:hover{
+   background-color: var(--secundary-color);
+}
+main .digitos input[type="button"]:active{
+   background-color: var(--background);
+   color: var(--txt-color);
+}
+.msg-container{
+    display: grid;
+    align-content: space-evenly;
+    justify-items: center;
+    border:2px solid rgb(51, 51, 51);
+    width: 80%;
+    margin:var(--padding-m) auto var(--padding-g);
+    border-radius: var(--padding-xs);
+}
+.msg{
+    background-color: var(--txt-color);
+    color: #000;
+    padding: 0 var(--padding-m);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2rem;
+}
+.resultado-container{
+    text-align: center;
+}
+.resultado-container p{
+    color: var(--txt-color);
+    text-align: center;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+.resultado-container .resultado{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+footer{
+    padding: var(--padding-m);
+    text-align: center;
+    color: var(--txt-color);
+    font-family: var(--fontfamily);
+    font-size: .9rem;
+
+    }
+footer p{
+    margin: auto;
+    width: 90%;
+    line-height: 1rem;
+    }
+footer p .fa-heart{
+    color: rgb(139, 209, 8);
+    font-size: 1.1rem;
+    }
+
+ @media(max-width:460px){
+     header p{
+        margin-top: var(--padding-m);
+        line-height: 1.8rem;
+        padding: 0 var(--padding-m);
+        }
+    main{
+        width: 90%;
+        grid-template-rows: 120px 350px 130px;
+        }
+    .title{
+        padding: var(--padding-m);
+    }
+    .title h1{
+        font-size:1.8rem;
+        line-height: 2rem;
+    }
+    .sub-title h2{
+        font-size: 1.1rem; 
+        line-height: 1rem;
+    }
+    main .digitos input[type="button"],.msg-container{
+        width: 90%;
+    }
+    }

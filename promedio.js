@@ -15,6 +15,8 @@ const cajaItem = document.querySelector("#cajaItem");
 // const itemValue = cajaItem.value;
 const botonCalcular = document.querySelector("#botonCalcularPromedio");
 const mensaje = document.querySelector("#msg");
+const resultado = document.querySelector("#resultado");
+const numerosDigitados = document.querySelector("#numerosDigitados");
 
 function guardar(event){
         if(event.keyCode == 13){
@@ -24,16 +26,18 @@ function guardar(event){
                     numeros.push(parseFloat(cajaItem.value));
                     console.log(cajaItem.value);
                     console.log(numeros);
+                    numerosDigitados.innerHTML = " " +
+                    numeros.join(", ");
                     cajaItem.value = "";
-                    mensaje.innerText = ""; 
+                    mensaje.innerHTML = ""; 
                     }
             else{
-                mensaje.innerText = "Máximo 10 números, calcula el promedio"; 
+                mensaje.innerHTML = " <i class='fa-solid fa-circle-exclamation'></i> Máximo 10 números, ahora puedes calcular el promedio"; 
             }   
         }
         else{
             console.log("Sólo puedes introducir números del 1 al 999");
-            mensaje.innerText = "Sólo puedes introducir números del 1 al 999";    
+            mensaje.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i> Sólo puedes introducir números del 1 al 999 ";    
         }
 
     }
@@ -50,6 +54,7 @@ function calcularPromedio(){
         cajaItem.value = "";
         numeros.length = 0;
         mensaje.innerText = ""; 
+        resultado.innerHTML = " " + promedio;
     // }
     // else{
     //     console.log("Introduce los dígitos a proemdiar");
