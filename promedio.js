@@ -1,18 +1,5 @@
-// const numeros = [100, 200, 300, 500];
 const numeros = [];
-let sumaLista = 0;
-
-for(let i = 0; i < numeros.length; i++){
-    sumaLista += numeros[i];
-    // console.log(sumaLista);
-}
-
-// console.log("La suma es: "+ sumaLista);
-const promedio = sumaLista / numeros.length;
-// console.log("El promedio es: " + promedio);
-
 const cajaItem = document.querySelector("#cajaItem");
-// const itemValue = cajaItem.value;
 const botonCalcular = document.querySelector("#botonCalcularPromedio");
 const mensaje = document.querySelector("#msg");
 const resultado = document.querySelector("#resultado");
@@ -24,10 +11,7 @@ function guardar(event){
             if((cajaItem.value > 0 &&  cajaItem.value < 1000) && cajaItem.value != ""){ 
                 if(numeros.length < 10){
                     numeros.push(parseFloat(cajaItem.value));
-                    console.log(cajaItem.value);
-                    console.log(numeros);
-                    numerosDigitados.innerHTML = " " +
-                    numeros.join(", ");
+                    numerosDigitados.innerHTML = " " + numeros.join(", ");
                     cajaItem.value = "";
                     mensaje.innerHTML = ""; 
                     }
@@ -36,30 +20,18 @@ function guardar(event){
             }   
         }
         else{
-            console.log("Sólo puedes introducir números del 1 al 999");
             mensaje.innerHTML = "<i class='fa-solid fa-circle-exclamation'></i> Sólo puedes introducir números del 1 al 999 ";    
         }
-
     }
 }
 
-
 function calcularPromedio(){
-    // if(cajaItem.value != "")
-    // {
-        const suma = numeros.reduce((acumulado, item)=> acumulado + item)
-        console.log("Suma: " + suma);
+        const suma = numeros.reduce((acumulado, item)=> acumulado + item);
         const promedio = suma/numeros.length;
-        console.log("Promedio: " + promedio);
         cajaItem.value = "";
         numeros.length = 0;
         mensaje.innerText = ""; 
         resultado.innerHTML = " " + promedio;
-    // }
-    // else{
-    //     console.log("Introduce los dígitos a proemdiar");
-    //     mensaje.innerText = "Introduce los dígitos a proemdiar"; 
-    // }
 }
 
 cajaItem.addEventListener("keydown", guardar);
